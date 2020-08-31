@@ -1,0 +1,280 @@
+/*
+colors:
+black: #000000
+blue: #277b9f
+light green: #6fc1b2
+dark green: #4ea699
+light gray: #b7b7b7
+dark gray: #4d4d4d
+
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+
+@font-face {
+    font-family: gotham;
+    src: url(Gotham/GothamNarrow-Book.otf) format("opentype");
+}
+
+@font-face {
+    font-family: gothamBold;
+    src: url(Gotham/GothamNarrow-Bold.otf) format("opentype");
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #d8d8d8;
+/*    color: #b7b7b7;*/
+    color: white;
+    font-family: 'gotham', 'Arial', sans-serif;
+}
+
+header {
+    background-color: #000000;
+    text-align: center;
+    
+/*    margin-bottom: 25px;*/
+    font-family: 'Baloo', cursive;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    font-size: x-large;
+}
+
+header a {
+/*    color: #247ba0;*/
+    color: #b7b7b7;
+    text-decoration: none;
+    
+}
+
+#homeHeader a{
+	color: #6fc1b2;
+}
+#newpage {
+    background-color: #4d4d4d;
+/*    overflow: hidden;*/
+/*    min-height: 100vh;*/
+    
+}
+
+#links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top:25px;
+/*    background-image: linear-gradient(white, #6fc1b2);*/
+/*    background-color: #6fc1b2;*/
+/*    background-image: url({{ url_for('images', filename='Image-1.jpg'\)}});*/
+/*    background-image: url(images/Image-1.jpg);*/
+    min-height: 95vh;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+#links a {
+    box-sizing: border-box;
+    color: #000000;
+/*    color: #247ba0;*/
+    text-decoration: none;
+    width: 100%;
+    font-size: 55px;
+    text-align: center;
+/*    background-color: #d8d8d8;*/
+    padding: 15px 0 0px 0;
+    
+    font-family: 'gothamBold', sans-serif;
+    
+}
+
+
+#alarmPage {
+	background-color: #d8d8d8;
+/*    color: #000000;*/
+    color: #4d4d4d;
+    overflow: auto;
+}
+
+#alarmPage h1 {
+	margin: 10px 0 0 15px;
+}
+
+
+
+.btn {
+    color: #277b9f;
+     text-decoration: none;
+/*
+    padding: 5px;
+    border-radius: 10px;
+    margin: 15px;
+*/
+}
+
+.lrmRow {
+/*
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+*/
+    padding: 20px 15px 0px 15px;
+    overflow: auto;
+}
+
+.lrmRow a {
+	float: right;
+    margin: 8px 12px 0 12px;
+}
+
+.lrmRow h2 {
+	float: left;
+}
+
+
+.lrmRow2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 5px 15px 15px 15px;
+    border-bottom: 1px solid rgba(0,0,0, .1)
+}
+
+
+
+
+input[type=submit]{
+    background-color: #247ba0;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 25px 0 25px 0;
+    margin: 0px 0 25px 0;
+    font-size: large;
+/*    font-family: 'GothamBold', sans-serif;*/
+    
+}
+
+form {
+    width: 90%;
+    margin: auto;
+}
+
+#newAlarmLink {
+	float: right;
+    text-decoration: none;
+    padding: 25px 10px 10px 10px;
+    margin-right: 15px;
+    font-size: xx-large;
+    clear: both;
+    font-weight: 800;
+    color: #000000;
+    
+}
+
+#alarmForm {
+	font-size: xx-large;
+}
+
+#timeSelect select {
+    font-size: xx-large;
+    margin: 15px 0 15px 0;
+}
+
+#soundSelect {
+	font-size: 30px;
+/*    margin: 15px 0 15px 0;*/
+/*    float: right;*/
+}
+/*
+
+#alarmForm checkbox{
+	padding: 10px;
+}
+*/
+
+.noseImg {
+	height: 17px;
+    margin-bottom: -3px;
+}
+
+input[type='checkbox'] {
+    transform: scale(2.25,2.25);
+    margin-top: 12px;
+/*    float: right;*/
+}
+
+input[type='checkbox']:checked {
+    background: #277b9f;
+    color: white;
+}
+
+#name {
+    width: 100%;
+    height: 35px;
+}
+
+#timeSelect {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#runningAlarm {
+	text-align: center;
+}
+
+#alarmForm .row{
+	display: flex;
+    justify-content: space-between;
+    margin: 15px auto 15px auto;
+    width: 80%;
+}
+
+#newAlarmTitle {
+	color: #6fc1b2 ;
+    text-align: center;
+    font-family: 'GothamBold', sans-serif;
+    font-size: 40px;
+    margin: 15px;
+}
+
+#infoPage {
+	background-color: #d8d8d8;
+    color: black;
+    min-height: 100vh;
+    padding: 15px 5% 0 5%;
+}
+
+#infoPage h3 {
+	color: #277b9f;
+    margin-top: 15px;
+}
+
+#nav {
+    background-color: #6fc1b2;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+/*
+    position: sticky;
+    position: -webkit-sticky;
+*/
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+#nav a {
+    color: #4ea699;
+    padding: 15px 10px 10px 10px;
+    font-size: x-large;
+}
+
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RPi Web Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+    <!-- Optional theme -->
+    <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <header>
+            <a href="/home">
+                <a href="/home"><h1>doze</h1></a>
+            </a>
+        </header>
+    <div id="alarmPage">
+        <a href="/addAlarm" id="newAlarmLink">+</a>
+        <br>
+
+        <h1>Alarms</h1>
+
+                {% for a in alarms %}
+        <div class="row">
+            
+        
+            
+            <div class="lrmRow">
+            <h2>{{ a.timee }}</h2>
+            <a href="/{{a.name}}/delete" class="btn" role="button">Delete Alarm</a>
+            {% if a.on == true %}
+            <a href="/{{a.name}}/off" class="btn" role="button">Turn Off</a> {% else %}
+            <a href="/{{a.name}}/on" class="btn" role="button">Turn On</a> {% endif %}
+            </div>
+            <div class="lrmRow2">
+            <h3>{{ a.name }}&nbsp;</h3>
+            {% if a.sound_on == true %}
+            <span>&nbsp;<i class="far fa-bell"></i>&nbsp;</span> {% endif %}
+            
+            {% if a.scent == true %}
+            <span>&nbsp;<img src="{{url_for('static', filename='images/nose.svg')}}" alt="" class="noseImg">&nbsp;</span>
+            {% endif %} {% if a.light == true %}
+            <span>&nbsp;<i class="far fa-lightbulb"></i>&nbsp;</span> {% endif %}
+            <div>&nbsp;</div>
+            
+            </div>
+            {% endfor %}
+
+
+            
+<!--
+             {% for a in alarms %}
+        <div class="row">
+           
+            <div>&nbsp;</div>
+            <div class="lrmRow">
+                <h2>{{ a.timee }}</h2>
+
+
+                {% if a.on == true %}
+                <a href="/{{a.name}}/off" class="btn" role="button">Turn Off</a> {% else %}
+                <a href="/{{a.name}}/delete" class="btn" role="button">Delete Alarm</a>
+                <a href="/{{a.name}}/on" class="btn" role="button">Turn On</a>
+                            {% endif %}
+
+            </div>
+            <div class="lrmRow2">
+
+
+                <span>{{ a.name }}</span> {% if a.sound == true %}
+                <span>&nbsp;<i class="far fa-bell"></i>&nbsp;</span> {% endif %}
+                {% if a.scent == true %}
+                <span><img src="../images/nose.svg" alt="" class="noseImg">&nbsp;</span>
+                {% endif %} 
+               {% if a.light == true %}
+                <span><i class="far fa-lightbulb"></i>&nbsp;</span>
+                            {% endif %}
+           
+            </div>
+                        {% endfor %}
+-->
+        </div>
+    </div>
+
+    <div id="nav">
+        <a href="/to_alarms"><i class="far fa-clock"></i></a>
+        <a href="/to_info"><i class="fas fa-info-circle"></i></a>
+        <a href="/to_account"><i class="fas fa-user"></i></a>
+        <a href="/to_settings"><i class="fas fa-cog"></i></a>
+    </div>
+</body>
+
+</html>
